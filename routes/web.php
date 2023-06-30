@@ -1,8 +1,10 @@
 <?php
   
-use Illuminate\Support\Facades\Route;
-  
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PatientController;
+use App\Http\Controllers\ClerkController;
+use Illuminate\Support\Facades\Route;
   
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,19 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
+
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('doctors', [DoctorController::class, 'show'])->name('doctors.index');
+Route::get('clerks', [ClerkController::class, 'show'])->name('clerks.index');
+Route::get('patients', [PatientController::class, 'show'])->name('patients.index');
+
+
+
+
+
+
+
+

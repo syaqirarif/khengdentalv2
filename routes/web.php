@@ -24,6 +24,9 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
 
 Route::get('/', function () {
     return view('index');

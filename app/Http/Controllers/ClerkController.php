@@ -12,4 +12,8 @@ class ClerkController extends Controller
         $data= clerk :: all();
         return view('clerks', compact('data'));
     }
+
+    public function edit() {
+        
+    }
 }
